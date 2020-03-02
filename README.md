@@ -15,21 +15,21 @@
 <blockquote align="center">“Não espere para plantar, apenas tenha paciência para colher”!</blockquote>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/mlg404/bootcamp-goStack-desafio-02.svg">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/mlg404/bootcamp-goStack-desafio-03.svg">
 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/mlg404/bootcamp-goStack-desafio-02.svg">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/mlg404/bootcamp-goStack-desafio-03.svg">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/mlg404/bootcamp-goStack-desafio-02.svg">
-  <a href="https://github.com/mlg404/bootcamp-goStack-desafio-02/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mlg404/bootcamp-goStack-desafio-02.svg">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/mlg404/bootcamp-goStack-desafio-03.svg">
+  <a href="https://github.com/mlg404/bootcamp-goStack-desafio-03/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/mlg404/bootcamp-goStack-desafio-03.svg">
   </a>
 
   <a href="https://github.com/mlg404/bootcamp-goStack-desafio-01/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/mlg404/bootcamp-goStack-desafio-02.svg">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/mlg404/bootcamp-goStack-desafio-03.svg">
   </a>
 
-  <a href="https://github.com/mlg404/bootcamp-gostack-desafio-02/blob/master/LICENSE">
-    <img alt="GitHub" src="https://img.shields.io/github/license/mlg404/bootcamp-goStack-desafio-02.svg">
+  <a href="https://github.com/mlg404/bootcamp-goStack-desafio-03/blob/master/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/mlg404/bootcamp-goStack-desafio-03.svg">
   </a>
 
   <a href="https://rocketseat.com.br">
@@ -58,6 +58,7 @@ Nesse primeiro desafio vamos criar algumas funcionalidades básicas que aprendem
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
 -  [Yup](https://github.com/jquense/yup)
+-  [Multer](https://github.com/expressjs/multer)
 -  [Express](https://expressjs.com/)
 -  [Node.js](https://nodejs.org/)
 -  [Sucrase](https://github.com/alangpierce/sucrase)
@@ -69,20 +70,20 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 ## :information_source: Como usar
 
-Para clonar e usar esta aplicação, você precisará do [Git](https://git-scm.com), [Node.js v13.0.1][nodejs] ou superior + [Yarn v1.19.1][yarn] ou superior instalados no seu computador. No seu terminal:
+Para clonar e usar esta aplicação, você precisará do [Git](https://git-scm.com), [Node.js v12.15.0][nodejs] ou superior + [Yarn v1.21.1][yarn] ou superior instalados no seu computador. No seu terminal:
 
 ```bash
 # Clonar este repositório
-$ git clone https://github.com/mlg404/bootcamp-goStack-desafio-02.git desafio-02
+$ git clone https://github.com/mlg404/bootcamp-goStack-desafio-03.git desafio-03
 
 # Aceder a este repositório
-$ cd desafio-02
+$ cd desafio-03
 
 # Instalar dependências
 $ yarn install
 
 # Rodar a aplicação
-$ yarn start
+$ yarn dev
 ```
 
 ## :memo: Licença
