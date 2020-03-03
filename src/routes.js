@@ -32,9 +32,9 @@ routes.get('/deliverymen/:id', DeliverymanController.index);
 routes.post('/files', upload.single('file'), FileController.store);
 
 routes.post('/deliveries', DeliveryController.store);
-// routes.get('/deliveries', DeliveryController.show);
+routes.get('/deliveries', DeliveryController.show);
+routes.get('/deliveries/:id', DeliveryController.index);
+routes.delete('/deliveries/:id', DeliveryController.destroy);
 // routes.put('/deliveries/:id', DeliveryController.update);
-// routes.delete('/deliveries/:id', DeliveryController.destroy);
-// routes.get('/deliveries/:id', DeliveryController.index);
 
 export default routes;

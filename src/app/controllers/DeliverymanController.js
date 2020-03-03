@@ -30,6 +30,12 @@ class DeliverymanController {
     const deliverymen = await Deliveryman.findAll({
       limit: 10,
       offset: (page - 1) * 10,
+      include: [
+        {
+          model: File,
+          as: 'avatar',
+        },
+      ],
     });
 
     return res.json(deliverymen);
