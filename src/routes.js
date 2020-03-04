@@ -8,6 +8,7 @@ import RecipientController from './app/controllers/RecipientController';
 import DeliverymanController from './app/controllers/DeliverymanController';
 
 import authMiddleware from './app/middlewares/auth';
+import adminMiddleware from './app/middlewares/admin';
 import multerConfig from './config/multer';
 
 const routes = new Router();
@@ -15,7 +16,11 @@ const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
 
+// rotas para usuários logados
 routes.use(authMiddleware);
+
+// rotas para administradores
+routes.use(adminMiddleware);
 
 routes.post('/recipients', RecipientController.store);
 routes.get('/recipients', RecipientController.show);
