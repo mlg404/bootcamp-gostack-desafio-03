@@ -1,7 +1,7 @@
 import * as Yup from 'yup';
-import { getHours, parseISO, isFuture } from 'date-fns';
+import { getHours, parseISO, isFuture, startOfDay, endOfDay } from 'date-fns';
+import { Op } from 'sequelize';
 import Delivery from '../models/Delivery';
-import Deliveryman from '../models/Deliveryman';
 
 class DeliveryStartsController {
   async update(req, res) {
@@ -31,6 +31,24 @@ class DeliveryStartsController {
       return res
         .status(401)
         .json({ error: 'You can not pick up a delivery in a future time' });
+    }
+
+    // check if deliveryman has not picked up 5 or more deliveries
+    const countDelivery = await Delivery.count({
+      where: {
+        start_date: {
+          [Op.between]: [
+            startOfDay(parseISO(searchDate)),
+            endOfDay(parseISO(searchDate)),
+          ],
+        },
+      },
+    });
+
+    if (countDelivery >= 5) {
+      return res
+        .status(401)
+        .json({ error: 'Deliveryman already pick up 5 deliveries' });
     }
 
     const updateDelivery = await delivery.update({
