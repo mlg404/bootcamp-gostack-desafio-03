@@ -3,6 +3,7 @@ import Delivery from '../models/Delivery';
 import Deliveryman from '../models/Deliveryman';
 import Recipient from '../models/Recipient';
 import File from '../models/File';
+import Mail from '../../lib/mail';
 
 class DeliveryController {
   async store(req, res) {
@@ -22,6 +23,7 @@ class DeliveryController {
     const checkDeliveryman = await Deliveryman.findByPk(
       req.body.deliveryman_id
     );
+
     if (!checkDeliveryman) {
       return res.status(401).json({ error: 'Deliveryman not founded' });
     }
@@ -39,6 +41,17 @@ class DeliveryController {
       },
       { attributes: ['id', 'recipient_id', 'deliveryman_id', 'product'] }
     );
+
+    await Mail.sendMail({
+      to: `${checkDeliveryman.get('name')} <${checkDeliveryman.get('email')}>`,
+      subject: 'Nova encomenda disponível',
+      template: 'delivery',
+      context: {
+        name: checkDeliveryman.get('name'),
+        product: req.body.product,
+      },
+    });
+
     return res.json(delivery);
   }
 
