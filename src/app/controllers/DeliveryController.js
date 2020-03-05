@@ -15,7 +15,6 @@ class DeliveryController {
       end_date: Yup.date(),
       signature_id: Yup.number(),
     });
-
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
@@ -32,7 +31,14 @@ class DeliveryController {
       return res.status(401).json({ error: 'Recipient not founded' });
     }
 
-    const delivery = await Delivery.create(req.body);
+    const delivery = await Delivery.create(
+      {
+        recipient_id: req.body.recipient_id,
+        deliveryman_id: req.body.deliveryman_id,
+        product: req.body.product,
+      },
+      { attributes: ['id', 'recipient_id', 'deliveryman_id', 'product'] }
+    );
     return res.json(delivery);
   }
 
@@ -118,6 +124,20 @@ class DeliveryController {
   }
 
   async update(req, res) {
+    const schema = Yup.object().shape({
+      recipient_id: Yup.number().required(),
+      deliveryman_id: Yup.number(),
+      product: Yup.string().required(),
+      canceled_at: Yup.date(),
+      start_date: Yup.date(),
+      end_date: Yup.date(),
+      signature_id: Yup.number(),
+    });
+
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'Validation fails' });
+    }
+
     const delivery = await Delivery.findByPk(req.params.id);
     if (!delivery) {
       return res.status(400).json({ error: 'Delivery not founded' });

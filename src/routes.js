@@ -6,6 +6,8 @@ import SessionController from './app/controllers/SessionController';
 import DeliveryController from './app/controllers/DeliveryController';
 import RecipientController from './app/controllers/RecipientController';
 import DeliverymanController from './app/controllers/DeliverymanController';
+import DeliveryEndsController from './app/controllers/DeliveryEndsController';
+import DeliveryStartsController from './app/controllers/DeliveryStartsController';
 
 import authMiddleware from './app/middlewares/auth';
 import adminMiddleware from './app/middlewares/admin';
@@ -40,6 +42,14 @@ routes.post('/deliveries', DeliveryController.store);
 routes.get('/deliveries', DeliveryController.show);
 routes.get('/deliveries/:id', DeliveryController.index);
 routes.delete('/deliveries/:id', DeliveryController.destroy);
-// routes.put('/deliveries/:id', DeliveryController.update);
+routes.put('/deliveries/:id', DeliveryController.update);
+
+// Start and End dates
+routes.put('/deliveries/:id/start', DeliveryStartsController.update);
+routes.put(
+  '/deliveries/:id/finish',
+  upload.single('file'),
+  DeliveryEndsController.update
+);
 
 export default routes;
