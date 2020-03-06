@@ -60,15 +60,15 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 -  [Yup](https://github.com/jquense/yup)
 -  [Multer](https://github.com/expressjs/multer)
--  [Express](https://expressjs.com/)
 -  [Node.js](https://nodejs.org/)
+-  [Express](https://expressjs.com/)
 -  [Sucrase](https://github.com/alangpierce/sucrase)
--  [Nodemon](https://nodemon.io/)
 -  [date-fns](https://date-fns.org/)
 -  [bcryptjs](https://github.com/dcodeIO/bcrypt.js)
+-  [Nodemon](https://nodemon.io/)
 -  [Sequelize](https://sequelize.org/)
--  [Handlebars](https://handlebarsjs.com/)
 -  [Nodemailer](https://nodemailer.com/about/)
+-  [Handlebars](https://handlebarsjs.com/)
 -  [JsonWebToken](https://jwt.io/)
 -  [VS Code][vc] com [EditorConfig][vceditconfig],  [ESLint][vceslint] e [Prettier][vcprettier]
 
