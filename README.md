@@ -7,7 +7,7 @@
 </h3>
 
 <h3 align="center">
-  :warning: Etapa 1/4 do Desafio Final :warning:
+  :warning: Etapa 2/4 do Desafio Final :warning:
 </h3>
 
 <p>Esse desafio faz parte do Desafio Final, que é uma aplicação completa (Back-end, Front-end e Mobile) que é avaliada para emissão do Certificado do Bootcamp GoStack, por isso é fundamental que ele seja feito com muito empenho!</p>
@@ -42,6 +42,7 @@
   <a href="#rocket-sobre-o-desafio">Sobre o desafio</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#computer-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#information_source-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#mag_right-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#memo-licença">Licença</a>
 </p>
 
@@ -63,8 +64,11 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 -  [Node.js](https://nodejs.org/)
 -  [Sucrase](https://github.com/alangpierce/sucrase)
 -  [Nodemon](https://nodemon.io/)
+-  [date-fns](https://date-fns.org/)
 -  [bcryptjs](https://github.com/dcodeIO/bcrypt.js)
 -  [Sequelize](https://sequelize.org/)
+-  [Handlebars](https://handlebarsjs.com/)
+-  [Nodemailer](https://nodemailer.com/about/)
 -  [JsonWebToken](https://jwt.io/)
 -  [VS Code][vc] com [EditorConfig][vceditconfig],  [ESLint][vceslint] e [Prettier][vcprettier]
 
@@ -85,9 +89,49 @@ $ yarn install
 # Rodar a aplicação
 $ yarn dev
 ```
+## :mag_right: Funcionalidades
+
+Abaixo estão descritas as funcionalidades que adicionei a minha aplicação.
+
+### **1. Autenticação dos Administradores**
+
+Criei a permissão para que um usuário se autentique na aplicação utilizando e-mail e uma senha.
+
+- A autenticação foi feita utilizando JWT.
+- Realizei a validação dos dados de entrada.
+- Administrador tem acesso a todas as rotas da aplicação.
+- Pode gerenciar todos os entregadores, destinatários e entregas.
+
+### **2. Gestão de destinatários**
+
+Criei a permissão para que os destinatários sejam mantidos (cadastrados/atualizados) na aplicação.
+
+- O gerenciamento de destinatários só pode ser feito por administradores autenticados na aplicação.
+- Realizei a validação dos dados de entrada
+- O destinatário não pode se autenticar no sistema, ou seja, não possui senha.
+
+### **3. Gestão de entregadores**
+
+Criei um CRUD para que os entregadores sejam mantidos na aplicação.
+
+- O gerencimaneto de entregadores só pode ser feito por administradores autenticados na aplicação.
+- Realizei a validação dos dados de entrada
+- O entregador não pode se autenticar no sistema, ou seja, não possui senha.
+- O entregador pode visualizar as entregas vinculadas a ele.
+- O entregador pode iniciar uma entrega desde que esteja dentro do horário ( 08: as 18:00 ), e desde que não tenha atingido a cota de  5 ou entregas iniciadas no dia.
+- O entregador pode finalizar uma entrega, desde que envie uma foto de sua assinatura.
+- O entregador pode cadastrar um problema nas suas entregas.
+
+### **4. Gestão de encomendas**
+
+Criei um CRUD para que as encomendas sejam mantidas na aplicação.
+
+- O gerencimaneto de encomendas só pode ser feito por administradores autenticados na aplicação.
+- Realizei a validação dos dados de entrada.
+- A retirada de encomendas só pode ser feita entre 08:00 e 18:00 horas
 
 ## :memo: Licença
-Este projeto está sob a licença do MIT . Veja a [LICENÇA](https://github.com/mlg404/bootcamp-goStack-desafio-02/blob/master/LICENSE) para mais informações.
+Este projeto está sob a licença do MIT . Veja a [LICENÇA](https://github.com/mlg404/bootcamp-goStack-desafio-03/blob/master/LICENSE) para mais informações.
 
 ---
 
