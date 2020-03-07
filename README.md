@@ -59,6 +59,7 @@ Nesse primeiro desafio vamos criar algumas funcionalidades básicas que aprendem
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
 -  [Yup](https://github.com/jquense/yup)
+-  [redis](https://redis.io/)
 -  [Multer](https://github.com/expressjs/multer)
 -  [Node.js](https://nodejs.org/)
 -  [Express](https://expressjs.com/)
@@ -66,6 +67,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 -  [date-fns](https://date-fns.org/)
 -  [bcryptjs](https://github.com/dcodeIO/bcrypt.js)
 -  [Nodemon](https://nodemon.io/)
+-  [bee-queue](https://github.com/bee-queue/bee-queue)
 -  [Sequelize](https://sequelize.org/)
 -  [Nodemailer](https://nodemailer.com/about/)
 -  [Handlebars](https://handlebarsjs.com/)
@@ -88,7 +90,16 @@ $ yarn install
 
 # Rodar a aplicação
 $ yarn dev
+
+# Rodar a fila de emails
+$ yarn queue
 ```
+
+Além disso, você precisará configurar o servidor postgres e redis.
+
+As requisições do Insomnia podem ser fácilmente importadas clicando no botão:
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FastFeet&uri=)
+
 ## :mag_right: Funcionalidades
 
 Abaixo estão descritas as funcionalidades que adicionei a minha aplicação.
