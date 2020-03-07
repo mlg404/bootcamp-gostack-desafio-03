@@ -64,11 +64,11 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 -  [Node.js](https://nodejs.org/)
 -  [Express](https://expressjs.com/)
 -  [Sucrase](https://github.com/alangpierce/sucrase)
--  [date-fns](https://date-fns.org/)
 -  [bcryptjs](https://github.com/dcodeIO/bcrypt.js)
+-  [date-fns](https://date-fns.org/)
 -  [Nodemon](https://nodemon.io/)
--  [bee-queue](https://github.com/bee-queue/bee-queue)
 -  [Sequelize](https://sequelize.org/)
+-  [bee-queue](https://github.com/bee-queue/bee-queue)
 -  [Nodemailer](https://nodemailer.com/about/)
 -  [Handlebars](https://handlebarsjs.com/)
 -  [JsonWebToken](https://jwt.io/)
@@ -98,7 +98,7 @@ $ yarn queue
 Além disso, você precisará configurar o servidor postgres e redis.
 
 As requisições do Insomnia podem ser fácilmente importadas clicando no botão:
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FastFeet&uri=)
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=FastFeet&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fmlg404%2Fbootcamp-gostack-desafio-03%2Fmaster%2FInsomnia.json)
 
 ## :mag_right: Funcionalidades
 
