@@ -21,9 +21,6 @@ const upload = multer(multerConfig);
 
 routes.post('/sessions', SessionController.store);
 
-// routes to logged users
-routes.use(authMiddleware);
-
 // deliveryman routes
 routes.get('/deliverymen/:id/deliveries', DeliverymanDeliveryController.show);
 
@@ -39,11 +36,14 @@ routes.put(
 routes.get('/deliveries/:id/problems', DeliveryProblemController.show);
 routes.post('/deliveries/:id/problems', DeliveryProblemController.store);
 
-// cancel delivery (problem)
-routes.put('/problems/:id/cancel-delivery', ProblemController.update);
+// routes to logged users
+routes.use(authMiddleware);
 
 // routes to admins
 routes.use(adminMiddleware);
+
+// cancel delivery (problem)
+routes.put('/problems/:id/cancel-delivery', ProblemController.update);
 
 // recipients routes
 routes.post('/recipients', RecipientController.store);

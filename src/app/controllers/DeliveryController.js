@@ -27,12 +27,12 @@ class DeliveryController {
     );
 
     if (!checkDeliveryman) {
-      return res.status(401).json({ error: 'Deliveryman not founded' });
+      return res.status(401).json({ error: 'Deliveryman not found' });
     }
 
     const checkRecipient = await Recipient.findByPk(req.body.recipient_id);
     if (!checkRecipient) {
-      return res.status(401).json({ error: 'Recipient not founded' });
+      return res.status(401).json({ error: 'Recipient not found' });
     }
 
     const delivery = await Delivery.create(
@@ -119,7 +119,7 @@ class DeliveryController {
       attributes: ['id', 'product', 'start_date', 'end_date', 'canceled_at'],
     });
     if (!delivery) {
-      return res.status(400).json({ error: 'Delivery not founded' });
+      return res.status(400).json({ error: 'Delivery not found' });
     }
 
     return res.json(delivery);
@@ -128,7 +128,7 @@ class DeliveryController {
   async destroy(req, res) {
     const delivery = await Delivery.destroy({ where: { id: req.params.id } });
     if (!delivery) {
-      return res.status(400).json({ error: 'Delivery not founded' });
+      return res.status(400).json({ error: 'Delivery not found' });
     }
     return res.json({ message: 'Delivery deleted!' });
   }
@@ -150,7 +150,7 @@ class DeliveryController {
 
     const delivery = await Delivery.findByPk(req.params.id);
     if (!delivery) {
-      return res.status(400).json({ error: 'Delivery not founded' });
+      return res.status(400).json({ error: 'Delivery not found' });
     }
     const updateDelivery = await delivery.update(req.body);
     return res.json(updateDelivery);
